@@ -26,7 +26,7 @@ pub struct Measurement<'a> {
     pub fields: BTreeMap<&'a str, Value<'a>>,
     
     /// Map of tags.
-    pub tags: BTreeMap<&'a str, &'a str>
+    pub tags: BTreeMap<&'a str, String>
 }
 
 impl<'a> Measurement<'a> {
@@ -74,7 +74,7 @@ impl<'a> Measurement<'a> {
     ///
     /// measurement.add_tag("tag", "value");
     /// ```
-    pub fn add_tag(&mut self, tag: &'a str, value: &'a str) {
+    pub fn add_tag(&mut self, tag: &'a str, value: String) {
         self.tags.insert(tag, value);
     }
 
